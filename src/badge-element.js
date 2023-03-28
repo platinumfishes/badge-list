@@ -95,6 +95,11 @@ class BadgeElement extends LitElement {
             <div class="badge-title">
               <a href="#"> ${this.badgeTitle} </a>
             </div>
+            <div class="badge-details">
+              <details>
+                <summary></summary>
+              </details>
+            </div>
           </div>
         </div>
       </div>
