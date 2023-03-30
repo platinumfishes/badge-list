@@ -1,6 +1,8 @@
 import { LitElement, html, css } from "lit";
 import "@lrnwebcomponents/simple-icon/simple-icon.js";
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
+import "@lrnwebcomponents/a11y-collapse/a11y-collapse.js";
+import "@lrnwebcomponents/a11y-collapse/lib/a11y-collapse-group.js";
 
 class BadgeElement extends LitElement {
   static properties = {
@@ -26,13 +28,6 @@ class BadgeElement extends LitElement {
       min-height: 41px;
       color: #fff;
       background-color: #cfe5f3;
-    }
-    .badge-content-table {
-      display: table;
-    }
-    .badge-content {
-      display: table-row;
-      height: 100px;
     }
     .badge-icon {
       display: table-cell;
@@ -76,32 +71,28 @@ class BadgeElement extends LitElement {
       --simple-icon-width: 120px;
       --simple-icon-height: 120px;
     }
+    a11y-collapse {
+      --a11y-collapse-border: none;
+      --a11y-collapse-heading-color: black;
+    }
   `;
 
   constructor() {
     super();
     this.badgeTitle = "Amazon Cognito";
-    this.badgeIcon = "hardware:cast-connected"
+    this.badgeIcon = "hardware:cast-connected";
   }
 
   render() {
     return html`
       <div class="badge-container">
-        <div class="badge-content-table">
-          <div class="badge-content">
-            <div class="badge-icon">
-            <simple-icon accent-color="pink" icon="${this.badgeIcon}"></simple-icon>
-            </div>
-            <div class="badge-title">
-              <a href="#"> ${this.badgeTitle} </a>
-            </div>
-            <div class="badge-details">
-              <details>
-                <summary></summary>
-              </details>
-            </div>
-          </div>
-        </div>
+        <a11y-collapse heading-button>
+          <p slot="heading"> 
+          <simple-icon accent-color="pink" icon="${this.badgeIcon}">
+          </simple-icon>${this.badgeTitle}</p>
+          <div>random crap</div>
+          </a11y-collapse
+        >
       </div>
     `;
   }
