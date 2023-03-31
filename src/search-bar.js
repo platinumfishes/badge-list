@@ -133,7 +133,6 @@ class SearchBar extends LitElement {
       .searchicon {
         margin-left: 30px;
         margin-right: 30px;
-        display: table-cell;
       }
 
       .input-box {
@@ -141,6 +140,7 @@ class SearchBar extends LitElement {
         width: 400%;
         outline: none;
         border-style: hidden;
+        display: block;
       }
 }
 
@@ -157,16 +157,12 @@ class SearchBar extends LitElement {
       <div class="search-container">
         <div class="search-content-table">
           <div class="search-content">
-            <div class="search-table-element">
-              <form ng-submit="search(true)">
-              </form>
-            </div>
-            <div class="searchicon">
+            <div class="searchicon search-table-element">
               <simple-icon accent-color="grey" icon="search">
               </simple-icon>
             </div>
             <div>
-              <input type="text" class="form-control input-box" placeholder="Search Content, Topics, and People">
+              <input type="text" class="form-control input-box search-table-element" placeholder="Search Content, Topics, and People">
             </div>
           </div>
         </div>
