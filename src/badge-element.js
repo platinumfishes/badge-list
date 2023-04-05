@@ -6,9 +6,9 @@ import "@lrnwebcomponents/a11y-collapse/lib/a11y-collapse-group.js";
 
 class BadgeElement extends LitElement {
   static properties = {
-    badgeIcon: { type: String },
-    badgeTitle: { type: String },
-    badgeIconColor: { type: String },
+    badgeIcon: { type: String, attribute: "badge-icon" },
+    badgeTitle: { type: String, attribute: "badge-title" },
+    badgeIconColor: { type: String, attribute: "badge-icon-color" },
   };
 
   static styles = css`
@@ -26,7 +26,6 @@ class BadgeElement extends LitElement {
       border-color: #3e98d3;
       border-radius: 12px;
       margin: 24px;
-      color: #fff;
       background-color: white;
     }
 
@@ -65,7 +64,7 @@ class BadgeElement extends LitElement {
   render() {
     return html`
       <div class="badge-container">
-        <a11y-collapse>
+        <a11y-collapse heading-button>
           <p slot="heading">
             <simple-icon
               accent-color="${this.badgeIconColor}"
