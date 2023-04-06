@@ -17,12 +17,10 @@ class PageOverlay extends LitElement {
     
     .overlay-container {
         background-color: white;
-        display: block;
-        margin-top: 20px;
-        margin-left: auto;
-        margin-right: auto;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 0px 0px 10px 0px;
         border-radius: 0px 0px 5px 5px;
-        height: 400px;
         width: 90%;
     }
 
@@ -71,8 +69,6 @@ class PageOverlay extends LitElement {
         --simple-icon-width: 100px;
         --simple-icon-height: 100px;
         --simple-icon-color: white;
-        margin-left: 850%;
-        padding-bottom: 30px;
     }
 
     .bottom-overlay-text {
