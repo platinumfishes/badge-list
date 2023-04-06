@@ -5,6 +5,7 @@ import { importMetaAssets } from '@web/rollup-plugin-import-meta-assets';
 import esbuild from 'rollup-plugin-esbuild';
 import { generateSW } from 'rollup-plugin-workbox';
 import path from 'path';
+import copy from 'rollup-pluggin-copy';
 
 export default {
   input: 'index.html',
@@ -53,6 +54,16 @@ export default {
         ],
       ],
     }),
+
+    copy({
+      targets: [
+        {
+          src: 'node_modules/@lrnwebcomponents/simple-icon/lib/svgs',
+          dest: 'dist',
+        },
+      ],
+    }),
+
     /** Create and inject a service worker */
     generateSW({
       globIgnores: ['polyfills/*.js', 'nomodule-*.js'],

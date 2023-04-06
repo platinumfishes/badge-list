@@ -9,6 +9,7 @@ class BadgeElement extends LitElement {
     badgeIcon: { type: String },
     badgeTitle: { type: String },
     badgeIconColor: { type: String },
+    badgeDescription: { type: String }
   };
 
   static styles = css`
@@ -43,6 +44,7 @@ class BadgeElement extends LitElement {
       --a11y-collapse-vertical-padding: 0px;
       --a11y-collapse-padding-top: 0px;
       --a11y-collapse-padding-bottom: 0px;
+      color: black;
     }
     p {
       padding: 0px;
@@ -60,6 +62,7 @@ class BadgeElement extends LitElement {
     this.badgeTitle = " ";
     this.badgeIcon = " ";
     this.badgeIconColor = " ";
+    this.badgeDescription = "Temporary description";
   }
 
   render() {
@@ -73,7 +76,7 @@ class BadgeElement extends LitElement {
             ></simple-icon>
             ${this.badgeTitle}
           </p>
-          <div>random crap</div>
+          <div>${this.badgeDescription}</div>
         </a11y-collapse>
       </div>
     `;

@@ -7,7 +7,9 @@ class SearchBar extends LitElement {
       header: { type: String },
     }
 
-    static styles = css`
+    static get styles() {
+      return css`
+
     
     
       .col-lg-12 { 
@@ -142,14 +144,24 @@ class SearchBar extends LitElement {
         border-style: hidden;
         display: block;
       }
-}
-
     `;
+}
 
     constructor() {
         super();
-        this.header = 'My app';
+        this.TrueInput = ""; //this is the search bar query value from user input
+        //this.filteredInputs = [];
       }
+
+searchInput(e) {
+  this.TrueInput = e.target.value;
+  this.dispatchEvent(new CustomEvent('value-changed', {
+      detail: {
+        value: this.TrueInput
+      }
+  }));
+}
+
 
       render() {
         return html`
@@ -162,7 +174,7 @@ class SearchBar extends LitElement {
               </simple-icon>
             </div>
             <div>
-              <input type="text" class="form-control input-box search-table-element" placeholder="Search Content, Topics, and People">
+              <input type="text" class="form-control input-box search-table-element" @input="${this.searchInput}" placeholder="Search Content, Topics, and People">
             </div>
           </div>
         </div>
