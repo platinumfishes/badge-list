@@ -1,9 +1,6 @@
 <!doctype html>
 <html lang="en">
 
-<!-- Allen zone -->
-<page-overlay></page-overlay>
-<!-- Allen zone -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -23,11 +20,17 @@
 </head>
 
 <body>
-  <badge-element badgeTitle="Amazon Cognito" badgeIcon="open-in-browser" badgeIconColor="purple" ></badge-element>
-  <badge-element badgeTitle="Amazon I AM" badgeIcon="communication:vpn-key" badgeIconColor="green"></badge-element>
-  <badge-element badgeTitle="Signing up for AWS Web Services" badgeIcon="device:settings-system-daydream" badgeIconColor="orange"></badge-element>
-  <badge-element badgeTitle="AWS-LAMBDA Phase 1" badgeIcon="hardware:device-hub" badgeIconColor="orange"></badge-element>
-  <badge-element badgeTitle="Amazon S3 Phase 1" badgeIcon="move-to-inbox" badgeIconColor="red"></badge-element>
+
+  <page-overlay>
+    <search-bar slot="searchBar"></search-bar>
+    <div slot="badge">
+      <badge-element badgeTitle="Amazon Cognito" badgeIcon="open-in-browser" badgeIconColor="purple" ></badge-element>
+      <badge-element badgeTitle="Amazon I AM" badgeIcon="communication:vpn-key" badgeIconColor="green"></badge-element>
+      <badge-element badgeTitle="Signing up for AWS Web Services" badgeIcon="device:settings-system-daydream" badgeIconColor="orange"></badge-element>
+      <badge-element badgeTitle="AWS-LAMBDA Phase 1" badgeIcon="hardware:device-hub" badgeIconColor="orange"></badge-element>
+      <badge-element badgeTitle="Amazon S3 Phase 1" badgeIcon="move-to-inbox" badgeIconColor="red"></badge-element>
+    </slot>
+  </page-overlay>
 
 
   <script type="module" src="./src/badge-list.js"></script>

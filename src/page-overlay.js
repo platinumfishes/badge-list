@@ -107,8 +107,9 @@ class PageOverlay extends LitElement {
                 </div>
             </div>
             <p class="top-text-box">${this.overlayParagraph}</p>
-            <search-bar></search-bar>
+            <slot name="searchBar"></slot>
             <div class="bottom-overlay-text">${this.overlayBadgeText}</div>
+            <slot name="badge"></slot>
         </div>
     `;
     }
