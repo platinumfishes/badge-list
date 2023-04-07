@@ -130,7 +130,7 @@ class SearchBar extends LitElement {
 
     constructor() {
         super();
-        this.value = "Default value";
+        this.value = "";
       }
 
 searchInput(e) {
