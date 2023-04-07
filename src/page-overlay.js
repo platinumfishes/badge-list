@@ -86,7 +86,7 @@ class PageOverlay extends LitElement {
         this.badgeTitle = "Amazon Cognito";
         this.overlayTitle = "Amazon Web Services Intro";
         this.overlayParagraph = "Here you will learn how to set up an account for AWS, how to create a root user, a I AM user account, set up MFA on your Root and I AM accounts, set up a user pool in Amazon Cognito, how to upload and use Amazon S3, and how to use Amazon Lambda.";
-        this.overlayBadgeText = "Badges >"
+        this.overlayBadgeText = "Badges >";
     }
     
     render() {
