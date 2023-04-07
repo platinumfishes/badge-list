@@ -5,7 +5,7 @@ import "./badge-element";
 class BadgeList extends LitElement {
   static properties = {
     badges: { type: Array },
-    badgeName: { type: String },
+    badgeTitle: { type: String },
   }
 
   static styles = css`
@@ -16,29 +16,29 @@ class BadgeList extends LitElement {
   constructor() {
     super();
     this.badges = [];
-    this.badgeTitle = "Badge title poggers";
+    this.badgeTitle = "Default badge title";
     this.getSearchResults().then((results) => {
       this.players = results;
     this.updateBadges();
     });
   }
 
-  async updateBadges() {
-    const address = '../api/badgeRoster.js';
-    fetch(address).then((response) => {
-        if (response.ok) {
-            return response.json()
-        }
-        return [];
-    })
-    .then((data) => {
-        this.badges = data;
-    });
-    console.log(data);
-  }
+  // async updateBadges() {
+  //   const address = '../api/badgeRoster.js';
+  //   fetch(address).then((response) => {
+  //       if (response.ok) {
+  //           return response.json()
+  //       }
+  //       return [];
+  //   })
+  //   .then((data) => {
+  //       this.badges = data;
+  //   });
+  //   console.log(data);
+  // }
 
   async getSearchResults(value = '') {
-    const address = '/api/badgeRoster?search=${value}';
+    const address = `/api/badgeRoster?search=${value}`;
     const results = await fetch(address).then((response) => { 
       if (response.ok) {
         return response.json()
@@ -59,11 +59,9 @@ class BadgeList extends LitElement {
     this.badges = await this.getSearchResults(term);
   }
 
-/* <div>${this.badgeTitle}</div>
-<search-bar @value-changed=${this.handleSearchEvent}></search-bar> */
-
   render() {
     return html`
+    <search-bar @value-changed="${this.handleSearchEvent}"></search-bar>
     <div class="wrapper">
       ${this.badges.map(badge => html`
         <div class="item">
