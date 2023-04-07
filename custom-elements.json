@@ -4,6 +4,34 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "api/badgeRoster.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "handler",
+          "parameters": [
+            {
+              "name": "req"
+            },
+            {
+              "name": "res"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "handler",
+            "module": "api/badgeRoster.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/badge-element.js",
       "declarations": [
         {
@@ -98,6 +126,10 @@
           "description": "",
           "name": "BadgeList",
           "members": [
+            {
+              "kind": "method",
+              "name": "updateBadges"
+            },
             {
               "kind": "method",
               "name": "getSearchResults",
