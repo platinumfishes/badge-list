@@ -9,12 +9,20 @@ class BadgeList extends LitElement {
   }
 
   static styles = css`
-    :host {
-    }
+  .bottom-overlay-text {
+    color: black;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    font-size: 28px;
+    font-weight: lighter;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 30px;
+  }
   `;
 
   constructor() {
     super();
+    this.overlayBadgeText = "Badges >";
     this.badges = [];
     this.badgeTitle = "Default badge title";
     this.getSearchResults().then((results) => {
@@ -22,20 +30,6 @@ class BadgeList extends LitElement {
     this.updateBadges();
     });
   }
-
-  // async updateBadges() {
-  //   const address = '../api/badgeRoster.js';
-  //   fetch(address).then((response) => {
-  //       if (response.ok) {
-  //           return response.json()
-  //       }
-  //       return [];
-  //   })
-  //   .then((data) => {
-  //       this.badges = data;
-  //   });
-  //   console.log(data);
-  // }
 
   async getSearchResults(value = '') {
     const address = `/api/badgeRoster?search=${value}`;
@@ -52,7 +46,7 @@ class BadgeList extends LitElement {
       return results;
   }
 
-//STOPPED 20:40 in video on building search widget
+//STOPPED 30:27 in video on building search widget
 
   async handleSearchEvent(e) {
     const term = e.detail.value; //this is the search term
@@ -61,7 +55,9 @@ class BadgeList extends LitElement {
 
   render() {
     return html`
+
     <search-bar @value-changed="${this.handleSearchEvent}"></search-bar>
+    <div class="bottom-overlay-text">${this.overlayBadgeText}</div>
     <div class="wrapper">
       ${this.badges.map(badge => html`
         <div class="item">
