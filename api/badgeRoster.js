@@ -1,9 +1,8 @@
 export default async function handler(req, res) {
-    console.log(req.query);
     const search = req.query.search || '';
-    const allBadges = [
+    var allBadges = [
         {
-            "badgeTitle": "Amazon Cognito Poggies",
+            "badgeTitle": "Amazon Cognito",
             "badgeIcon": "open-in-browser",
             "badgeIconColor": "purple",
             "badgeDescription": "Temporary description"
@@ -40,7 +39,6 @@ export default async function handler(req, res) {
         return badge.index.indexOf(search.toLowerCase()) > -1;
       });
 
-    console.log(allBadges);
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Origin", "*");

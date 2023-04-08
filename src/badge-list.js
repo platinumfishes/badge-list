@@ -24,9 +24,8 @@ class BadgeList extends LitElement {
     super();
     this.overlayBadgeText = "Badges >";
     this.badges = [];
-    this.badgeTitle = "Default badge title";
     this.getSearchResults().then((results) => {
-      this.players = results;
+      this.badges = results;
     });
   }
 
@@ -44,8 +43,6 @@ class BadgeList extends LitElement {
 
       return results;
   }
-
-//STOPPED 30:27 in video on building search widget
 
   async handleSearchEvent(e) {
     const term = e.detail.value; //this is the search term

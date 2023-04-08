@@ -166,10 +166,6 @@
             {
               "kind": "field",
               "name": "badgeTitle",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"Default badge title\"",
               "privacy": "public",
               "attribute": "badgeTitle"
             }
