@@ -32,14 +32,14 @@ export default async function handler(req, res) {
             "badgeDescription": "Temporary description"
         }
     ];
-    badges.map((badge) => {
+    allBadges.map((badge) => {
         badge.index = badge.badgeTitle.toLowerCase() + " " + badge.badgeDescription.toLowerCase();
     })
-    badges = badges.filter((badge) => {
+    allBadges = allBadges.filter((badge) => {
         return badge.index.indexOf(search.toLowerCase()) > -1;
       });
 
-    console.log(badges);
+    console.log(allBadges);
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Origin", "*");
