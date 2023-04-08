@@ -1,5 +1,6 @@
 export default async function handler(req, res) {
     console.log(req.query);
+    const search = req.query.search || '';
     const allBadges = [
         {
             "badgeTitle": "Amazon Cognito Poggies",
