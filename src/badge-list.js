@@ -27,7 +27,6 @@ class BadgeList extends LitElement {
     this.badgeTitle = "Default badge title";
     this.getSearchResults().then((results) => {
       this.players = results;
-    this.updateBadges();
     });
   }
 

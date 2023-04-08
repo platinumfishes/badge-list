@@ -128,10 +128,6 @@
           "members": [
             {
               "kind": "method",
-              "name": "updateBadges"
-            },
-            {
-              "kind": "method",
               "name": "getSearchResults",
               "parameters": [
                 {
@@ -151,6 +147,14 @@
             },
             {
               "kind": "field",
+              "name": "overlayBadgeText",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Badges >\""
+            },
+            {
+              "kind": "field",
               "name": "badges",
               "type": {
                 "text": "array"
@@ -165,13 +169,9 @@
               "type": {
                 "text": "string"
               },
-              "default": "\"Badge title poggers\""
-            },
-            {
-              "kind": "field",
-              "name": "badgeName",
+              "default": "\"Default badge title\"",
               "privacy": "public",
-              "attribute": "badgeName"
+              "attribute": "badgeTitle"
             }
           ],
           "attributes": [
@@ -180,8 +180,8 @@
               "fieldName": "badges"
             },
             {
-              "name": "badgeName",
-              "fieldName": "badgeName"
+              "name": "badgeTitle",
+              "fieldName": "badgeTitle"
             }
           ],
           "superclass": {
@@ -248,10 +248,6 @@
             {
               "kind": "field",
               "name": "overlayBadgeText",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"Badges >\"",
               "privacy": "public",
               "attribute": "overlayBadgeText",
               "reflects": true
@@ -314,11 +310,13 @@
             },
             {
               "kind": "field",
-              "name": "TrueInput",
+              "name": "value",
               "type": {
                 "text": "string"
               },
-              "default": "\"\""
+              "default": "\"\"",
+              "privacy": "public",
+              "attribute": "value"
             },
             {
               "kind": "field",
@@ -339,6 +337,10 @@
             {
               "name": "header",
               "fieldName": "header"
+            },
+            {
+              "name": "value",
+              "fieldName": "value"
             }
           ],
           "superclass": {
